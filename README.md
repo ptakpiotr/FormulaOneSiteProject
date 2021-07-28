@@ -1,4 +1,4 @@
-# Formula One Site Project
+# Formula One Site Project ![stars](https://img.shields.io/github/stars/ptakpiotr/FormulaOneSiteProject?style=social) ![code-size](https://img.shields.io/github/languages/code-size/ptakpiotr/FormulaOneSiteProject) ![last-commit](https://img.shields.io/github/last-commit/ptakpiotr/FormulaOneSiteProject)
 
 ## Table of contents
 * [General Info](#general-info)
