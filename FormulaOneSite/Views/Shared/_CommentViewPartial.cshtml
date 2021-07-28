@@ -1,0 +1,10 @@
+﻿@model CommentModel
+
+<div class="card text-white bg-dark mb-3" style="max-width:20rem;">
+    <div class="card-body">
+        <p>From: @Model.From</p>
+        <p>@Model.Content</p>
+        <br />
+        <p><button class="btn btn-outline-success" onclick="LikeThis('@Model.Id')">@Model.Likes +1</button></p>
+    </div>
+</div>

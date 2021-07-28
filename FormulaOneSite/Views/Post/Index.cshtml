@@ -1,0 +1,15 @@
+﻿@model List<PostReadDTO>
+@{ 
+    ViewData["Title"] = "View latest posts";
+}
+
+@if (Model == null)
+{
+    <div>No posts found</div>
+}else
+{
+    @foreach(var post in Model)
+    {
+        <partial name="_PostViewPartial" model="post" />
+    }
+}

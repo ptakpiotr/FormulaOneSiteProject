@@ -1,0 +1,11 @@
+﻿@model List<PostReadDTO>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    @foreach(var post in Model)
+    {
+        <partial name="_PostViewPartial" model="post" />
+    }
+</div>

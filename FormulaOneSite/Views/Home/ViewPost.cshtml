@@ -1,0 +1,44 @@
+﻿@model PostReadDTO
+@{
+    ViewData["Title"] = $"Read: {Model.Title}";
+}
+
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/signalRLogic.js"></script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <img src=@Model.PhotoSrc alt="Post Photo" class="img-fluid" />
+            <h1>@Model.Title</h1>
+            <p>
+                @Model.Content
+            </p>
+            <hr />
+        </div>
+        <div class="col">
+            @if (Model.Comments != null && Model.Comments.Count > 0)
+            {
+                @foreach (var comm in Model.Comments)
+                {
+                    <partial name="_CommentViewPartial" model="comm" />
+                }
+            }
+            else
+            {
+                <div>This post has no comments so far</div>
+            }
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div class="card text-white bg-dark">
+                    <input type="text" placeholder="Type your comment" name="commentBox" id="commentBox" required class="text-success" />
+                    <button onclick="AddComment()" class="btn btn-outline-success">Add Comment</button>
+                </div>
+            }
+            else
+            {
+                <div><a asp-controller="Account" asp-action="Login">Log in</a> or <a asp-controller="Account" asp-action="Register">Register</a> to comment</div>
+            }
+        </div>
+    </div>
+</div>

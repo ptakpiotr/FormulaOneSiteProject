@@ -1,0 +1,11 @@
+﻿@model PostCreateDTO
+@{ 
+    ViewData["Title"] = "Create Post";
+} 
+
+<form method="POST" asp-controller="Post" asp-action="Add">
+    <input type="text" asp-for=@Model.Title maxlength="50" required placeholder="Title"/>
+    <input type="text" asp-for=@Model.Content minlength="10" required placeholder="Content"/>
+    <input type="url" asp-for=@Model.PhotoSrc placeholder="Photo"/>
+    <input type="submit" value="Add Post"/>
+</form>

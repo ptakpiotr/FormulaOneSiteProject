@@ -1,0 +1,10 @@
+﻿@model FileModel
+@{ 
+    ViewData["Title"] = "Add File";
+}
+
+<form method="POST" asp-controller="Upload" asp-action="Index" enctype="multipart/form-data">
+    <input type="text" asp-for=@Model.Name placeholder="File name" required />
+    <input type="file" asp-for=@Model.File required />
+    <input type="submit" value="Add" />
+</form>

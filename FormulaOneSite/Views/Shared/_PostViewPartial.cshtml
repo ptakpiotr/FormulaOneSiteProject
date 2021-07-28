@@ -1,0 +1,12 @@
+﻿@model PostReadDTO
+
+    <div class="container">
+        <div class="card-sm-6">
+            <img src=@Model.PhotoSrc alt="Post Photo" class="card-img-top" />
+            <div class="card-body">
+                <b class="card-title">@Model.Title</b>
+                <br />
+                <a class="btn btn-dark" href=@System.IO.Path.Combine("/","Home/",$"ViewPost?id={Model.Id.ToString()}")>Read more...</a>
+            </div>
+        </div>
+    </div>
